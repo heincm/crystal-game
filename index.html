@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Game</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="" type="image/png">
+    <link rel="stylesheet" type="text/css" href="../crystal-game/assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../crystal-game/assets/css/style.css">
+</head>
+
+<body>
+    <div class="jumbotron py-1">
+        <h1 class="display-4">Cyrstal Game</h1>
+        <p class="lead">Can you hit the target number without going over?</p>
+        <hr class="my-2">
+        <p>Choose your cystals wisely</p>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <h3 class="text-center">Instructions</h3>
+                <p>At the beginning of each game, you'll be given a random target number to hit.</p>
+                <p>There are four different crystals/characters below. By clicking on one of the crystals/characters,
+                    you
+                    will add points to your score</p>
+                <p>To win the game, you must match the score exactly. Go over, and you'll lose.</p>
+                <p>The value of each crystal/character will be hidden at the start of each game until you click on it.</p>
+                <p>These values will change at the start of each new game. </p>
+            </div>
+        </div>
+        <div class="row">
+            <h4>Target Number</h4>
+        </div>
+        <div class="row">
+            <h4>Total Score</h4>
+            <p id="score"></p>
+        </div>
+        <div class="row">
+            <button id="attack" type="button" class="btn btn-danger">Attack!</button>
+        </div>
+        <div class="row">
+            <h4>Wins and Losses</h4>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 d-flex justify-content-around">
+                <img id="yoshi" src="assets/images/Yoshi.png" alt="yoshi">
+                <img src="assets/images/Kirby.png" alt="kirby">
+                <img src="assets/images/Mario.png" alt="mario">
+                <img src="assets/images/DonkeyKong.png" alt="DonkeyKong">
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="../crystal-game/assets/javascript/games.js"></script>
+</body>
+
+</html>
