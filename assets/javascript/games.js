@@ -12,7 +12,7 @@ function getRandomInt(min, max) {
     var ints = [];
     while (ints.length < num-1) {
       var randNum = getRandomInt(1, 12);
-      if(!ints.indexOf(randNum) > -1){
+      if(!ints.includes(randNum)){
         ints.push(randNum);
       }
     }
