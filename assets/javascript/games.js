@@ -1,29 +1,25 @@
-var targetNumber = 53;
+
 var wins
 
-$("#number-to-guess").text(targetNumber);
 var counter = 0;
 
 
-// The fucntion to generate a random number from 19-120
-function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-// Now for the hard part. Creating multiple crystals each with their own unique number value.
-$("#yoshi").on("click", function () {
-    alert("working")
-});
-// We begin by expanding our array to include four options.
-var numberOptions = [];
-
-//making random numbers to push to the array
-while (numberOptions < 54) {
-    var r = randomIntFromInterval(1, 12);
-    if (numberOptions.indexOf(r) === -1) numberOptions.push(r);
-    console.log(numberOptions)
-}
-
+// The function to generate a random number from 1-12 for the crystals
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  function getRandomInts(num) {
+    var ints = [];
+    while (ints.length < num-1) {
+      var randNum = getRandomInt(1, 12);
+      if(!ints.indexOf(randNum) > -1){
+        ints.push(randNum);
+      }
+    }
+    return ints;
+  }
+  var numberOptions = getRandomInts(5);
+  console.log(numberOptions);
 // Next we create a for loop to create crystals for every numberOption.
 for (var i = 0; i < numberOptions.length; i++) {
 
@@ -45,6 +41,15 @@ for (var i = 0; i < numberOptions.length; i++) {
     $("#crystals").append(imageCrystal);
 }
 
+//This function will reset the game
+function resetGame() {
+
+// This generates the random number for the score that needs to be achieved
+var targetNumber = getRandomInt(19, 120);
+$("#targetNumber").html(targetNumber);
+
+}
+resetGame();
 // This time, our click event applies to every single crystal on the page. Not just one.
 $(".crystal-image").on("click", function () {
 
@@ -68,7 +73,8 @@ $(".crystal-image").on("click", function () {
     }
 
     else if (counter >= targetNumber) {
-        alert("You lose!!");
+        losses++
+        $("#losses").html(losses);
     }
 
 });
