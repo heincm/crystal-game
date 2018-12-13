@@ -18,6 +18,7 @@ img {
 .container {
     color: black;
     background-color: rgba(255, 255, 255, 0.8);
+    min-height: calc(100vh - 70px);
 }
 
 img:hover{
@@ -38,4 +39,12 @@ img:hover{
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  .win {
+      background-color: rgba(64, 209, 108, 0.8)
+  }
+
+  .loss {
+      background:rgba(209, 64, 64, 0.8);
   }
