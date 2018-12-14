@@ -56,12 +56,10 @@ function resetGame() {
     createNewCrystals();
     counter = 0;
     $("#counter").html(counter)
-    console.log(numberOptions);
     startGame();
 };
 
-
-
+// This function starts the game
 function startGame(){
 $(".crystal-image").on("click", function (){
 
@@ -71,9 +69,10 @@ $(".crystal-image").on("click", function (){
     // Every click, from every crystal adds to the global counter.
     counter += crystalValue;
 
-    // All of the same game win-lose logic applies. So the rest remains unchanged.
+   
     $("#counter").html(counter);
 
+// Determning a win, updating win count, resetting the game
     if (counter === targetNumber) {
         wins++;
         $("#wins").html(wins);
@@ -81,6 +80,7 @@ $(".crystal-image").on("click", function (){
         resetGame();
     }
 
+// Determning a loss, updating win count, resetting the game
     else if (counter > targetNumber) {
         losses++;
         $("#losses").html(losses);
