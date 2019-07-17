@@ -1,8 +1,8 @@
 
-var wins = 0;
-var losses = 0;
-var counter = 0;
-var targetNumber;
+let wins = 0;
+let losses = 0;
+let counter = 0;
+let targetNumber;
 
 // The function to generate a random number from 1-12 for the crystals
 function getRandomInt(min, max) {
@@ -11,9 +11,9 @@ function getRandomInt(min, max) {
 
 // Create 4 unique integers
 function getRandomInts() {
-    var ints = [];
+    let ints = [];
     while (ints.length < 4) {
-        var randNum = getRandomInt(1, 12);
+        let randNum = getRandomInt(1, 12);
         if (!ints.includes(randNum)) {
             ints.push(randNum);
         }
@@ -21,15 +21,15 @@ function getRandomInts() {
     return ints;
 }
 
-var numberOptions
+let numberOptions
 
 // Next we create a for loop to create crystals for every numberOption.
 function createNewCrystals() {
     numberOptions = getRandomInts();
-    for (var i = 0; i < numberOptions.length; i++) {
+    for (let i = 0; i < numberOptions.length; i++) {
 
         // For each iteration, we will create an imageCrystal
-        var imageCrystal = $("<img>");
+        let imageCrystal = $("<img>");
 
         // First each crystal will be given the class ".crystal-image".
         // This will allow the CSS to take effect.
@@ -63,7 +63,7 @@ function resetGame() {
 function startGame(){
 $(".crystal-image").on("click", function (){
 
-    var crystalValue = ($(this).attr("data-crystalvalue"));
+    let crystalValue = ($(this).attr("data-crystalvalue"));
     crystalValue = parseInt(crystalValue);
     // We then add the crystalValue to the user's "counter" which is a global variable.
     // Every click, from every crystal adds to the global counter.
